@@ -10,7 +10,7 @@ public class SaddleSizeReporter {
     }
 
     public void report() {
-        System.out.println("Draggons born in the year " +
+        System.out.println("Dragons born in the year " +
                 targetYear +
                 " have a waist size of " +
                 beltSize + " cm");
