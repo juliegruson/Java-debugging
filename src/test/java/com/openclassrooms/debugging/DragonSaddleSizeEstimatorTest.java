@@ -1,4 +1,5 @@
 package com.openclassrooms.debugging;
+
 import com.openclassrooms.debugging.exception.InvalidSaddleSizeException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,10 +12,8 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
-
 
 @DisplayName("Given we have a saddle size estimatorUnderTest spell")
 @ExtendWith(MockitoExtension.class)
