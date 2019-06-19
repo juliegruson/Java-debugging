@@ -14,5 +14,5 @@ repositories {
 dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:5.5.0-RC1")
     testCompile("org.hamcrest:hamcrest-core:2.1")
-
+    testCompile("org.mockito:mockito-junit-jupiter:2.23.0")
 }

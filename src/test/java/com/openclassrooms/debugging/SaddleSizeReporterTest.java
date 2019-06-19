@@ -27,7 +27,7 @@ class SaddleSizeReporterTest {
     void report() {
         // Arrange
         int targetYear = 2019;
-        int saddleSize = 4027;
+        int saddleSize = 2018;
         SaddleSizeReporter classUnderTest = new SaddleSizeReporter(targetYear, saddleSize);
 
         // Act
@@ -36,6 +36,7 @@ class SaddleSizeReporterTest {
         // Assert
         String actualReport = byteArrayOutputStream.toString();
         assertThat( actualReport,
-                startsWith("Dragons born in the year 2019 have a waist size of 4027 cm"));
+                startsWith("In the year 2019, dragons born in the year 1 AD " +
+                        "will have a saddle size of 20.18 meters(2018.0 centimeters"));
     }
 }

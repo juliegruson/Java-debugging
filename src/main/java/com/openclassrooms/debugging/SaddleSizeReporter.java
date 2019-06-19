@@ -2,17 +2,19 @@ package com.openclassrooms.debugging;
 
 public class SaddleSizeReporter {
     private int targetYear;
-    private int beltSize;
+    private double beltSize;
 
-    public SaddleSizeReporter(int targetYear, int beltSize) {
+    public SaddleSizeReporter(int targetYear, double beltSize) {
         this.targetYear = targetYear;
         this.beltSize = beltSize;
     }
 
     public void report() {
-        System.out.println("Dragons born in the year " +
+        System.out.println("In the year " +
                 targetYear +
-                " have a waist size of " +
-                beltSize + " cm");
+                ", dragons born in the year 1 AD will have a saddle size of " +
+                beltSize / 100 + " meters" +
+                "(" + beltSize + " centimeters)"
+        );
     }
 }

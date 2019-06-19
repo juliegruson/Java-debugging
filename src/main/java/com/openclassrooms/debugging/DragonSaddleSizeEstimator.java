@@ -1,43 +1,108 @@
 package com.openclassrooms.debugging;
 
-import java.util.Calendar;
-
+/**
+ * Draggon Saddle Size Estimation based on an ancient ritual
+ * @Author Kal Issy
+ */
 public class DragonSaddleSizeEstimator {
+
+
     // Singleton instance of the Dragon Size Estimator
     public static final DragonSaddleSizeEstimator INSTANCE = new DragonSaddleSizeEstimator();
 
-    // The year when dragons were first spawned on Earth
+    /**
+     * The universal constant which is 42.
+     * This could also serve as a great example for a course on debugging
+     */
+    public static int UNIVERSAL_CONSTANT = 42;
+
+    // The year when dragons were first spawned on Earth in 1 AD
     public static final int DRAGON_SPAWN_YEAR = 1;
 
-    // Default to calculating a Dragon Saddle Size estimate for the current year
-    public static int TARGET_YEAR = Calendar.getInstance().get(Calendar.YEAR);
+    /**
+     * This number is lucky to dragons.
+     */
+    public static final int UNIVERSAL_LUCKY_NUMBER = 41;
 
-    // The current age of the dragon
-    private int age;
+
+    private int copyOfUniversalConstant;
+    private int yearOfBirth;
+    private DragonSaddleSizeVerifier verifier;
 
     public DragonSaddleSizeEstimator() {
-        age = TARGET_YEAR - DRAGON_SPAWN_YEAR;
+        copyOfUniversalConstant = UNIVERSAL_CONSTANT;
+        yearOfBirth = DRAGON_SPAWN_YEAR;
+        verifier = new DragonSaddleSizeVerifier();
+        UNIVERSAL_CONSTANT = UNIVERSAL_CONSTANT + UNIVERSAL_CONSTANT;
     }
 
-    public static void setTargetYear(int year){
-        TARGET_YEAR = year;
+    public static void setUniversalConstant(int universalConstant){
+        UNIVERSAL_CONSTANT = universalConstant;
     }
 
-    public int beltSize(int currentYear) {
-        // Start by setting the saddle size to the dragon's current age
-        int beltSize = age;
+    /**
+     * Estiamtes the size of a saddle in centimeters for a given year
+     * @param targetYear
+     * @return Saddle size
+     */
+    public Double estimateSaddleSizeInCentiMeters(int targetYear) throws Exception {
+        double roundedSaddleSize = calculateSaddleSizeFromYear(targetYear);
 
-        // Add as many years to the dragon's age as it's been alive
-        for (int i = currentYear; i> DRAGON_SPAWN_YEAR; i--) {
-            beltSize++;
-        }
-
+        // slow down the magic
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
             e.printStackTrace();
+            throw e;
         }
 
-        return beltSize;
+        // Verify that we have a valid saddle size
+        verifier.verify(roundedSaddleSize);
+
+        return roundedSaddleSize;
+    }
+
+    private double calculateSaddleSizeFromYear(int targetYear) {
+        // ((42-1)/41.0)
+        double universalLuckyNumber = new Double(UNIVERSAL_LUCKY_NUMBER);
+        double mysticalMultiplier = (copyOfUniversalConstant - yearOfBirth)/ universalLuckyNumber;
+
+        // Start by setting the saddle size to the dragon's current age
+        int saddleSizeFactor = 0;
+
+        // Count down and how many years it's been alive
+        for (int i = targetYear; i>DRAGON_SPAWN_YEAR; i--) {
+            saddleSizeFactor++;
+        }
+
+        // calculate the final saddle size
+        double exactSaddleSize = (saddleSizeFactor * mysticalMultiplier) - mysticalMultiplier /10;
+
+        return (double) Math.round(exactSaddleSize);
+    }
+
+    /**
+     * Sets the universal constant. This should be 42.
+     * @param copyOfUniversalConstant
+     */
+    public void setCopyOfUniversalConstant(int copyOfUniversalConstant) {
+        this.copyOfUniversalConstant = copyOfUniversalConstant;
+    }
+
+    /**
+     * Sets the dragon's year of birth. This is always 1 AD.
+     * @param yearOfBirth
+     */
+
+    public void setYearOfBirth(int yearOfBirth) {
+        this.yearOfBirth = yearOfBirth;
+    }
+
+    /**
+     * Sets the DragonSaddleSizeVerifier
+     * @param verifier
+     */
+    public void setVerifier(DragonSaddleSizeVerifier verifier) {
+        this.verifier = verifier;
     }
 }
