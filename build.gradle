@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'com.openclassrooms.debugging'
@@ -9,6 +10,15 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
+}
+
+application {
+    mainClassName = 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'
+}
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'
+    }
 }
 
 dependencies {

@@ -3,6 +3,8 @@ package com.openclassrooms.debugging;
 import java.util.Calendar;
 
 /**
+ * Guesses the size of a dragon's saddle.
+ * TODO: Wise-elder Raf's feedback form the year 0 AD needs to eventually be addressed.
  * @Author Kal Isee
  * @Date 1st January 0 BC
  */
@@ -22,6 +24,8 @@ public class DragonSaddleSizeGuesser {
             estimator.setCopyOfUniversalConstant(42); // The universal constant
             estimator.setYearOfBirth(1); // All dragon's were spawned in 1 AD
         }
+
+        System.out.println("Calculating saddle size for a dragon in the year " + targetYear);
          // Calculate Saddle Size
         double saddleSize = DragonSaddleSizeEstimator.INSTANCE.estimateSaddleSizeInCentiMeters(targetYear);
 
