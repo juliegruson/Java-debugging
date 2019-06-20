@@ -35,7 +35,7 @@ class DragonSaddleSizeEstimatorTest {
 
     @DisplayName("When estimating for a saddle size in the year 2 AD then the size is 2 centimeter")
     @Test
-    public void estimateSaddleSize_shouldReturnASizeOfOne_forEarlyEraOneAD() throws Exception {
+    public void estimateSaddleSize_shouldReturnASizeOfOne_forEarlyEraTwoAD() throws Exception {
 
         double estimatedSaddleSize = estimatorUnderTest.estimateSaddleSizeInCentiMeters(2);
         // A one year old dragon has a 1 cm saddle size
@@ -53,7 +53,6 @@ class DragonSaddleSizeEstimatorTest {
     @DisplayName("When estimating for a negative saddle size in the year -2")
     @Test
     public void estimateSaddleSize_shouldFail_forYearsBeforeZero() throws Exception {
-        double expectedSize = 2020.0;
         doThrow(new InvalidSaddleSizeException("")).when(verifier).verify(0.0);
 
         // Check that an assertion is thrown
