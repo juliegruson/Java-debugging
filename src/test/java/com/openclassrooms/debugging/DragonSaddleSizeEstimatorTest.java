@@ -35,7 +35,7 @@ class DragonSaddleSizeEstimatorTest {
 
     @DisplayName("When estimating for a saddle size in the year 2 AD then the size is 2 centimeter")
     @Test
-    public void estimateSaddleSize_shouldReturnTheAgePlusYearsSinceOneAD_forEarlyEra() throws Exception {
+    public void estimateSaddleSize_shouldReturnASizeOfOne_forEarlyEraOneAD() throws Exception {
 
         double estimatedSaddleSize = estimatorUnderTest.estimateSaddleSizeInCentiMeters(2);
         // A one year old dragon has a 1 cm saddle size
@@ -44,7 +44,7 @@ class DragonSaddleSizeEstimatorTest {
 
     @DisplayName("When estimating for a saddle size in the year 2021 then the size is 20.2 meters")
     @Test
-    public void estimateSaddleSize_shouldReturnTheAgePlusYearsSinceOneAD_forModernEraYear() throws Exception {
+    public void estimateSaddleSize_shouldReturnTheTwentyPointTwo_forModernEraYear2021() throws Exception {
         double expectedSize = 2020.0;
         double estimatedSaddleSize = estimatorUnderTest.estimateSaddleSizeInCentiMeters(2021);
         assertThat(estimatedSaddleSize, is(equalTo(expectedSize)));
