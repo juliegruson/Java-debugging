@@ -35,5 +35,8 @@ This will default to the current year and provide you with an appopriate estimat
 
 ### Calculate the Saddle Size of a Dragon in ANY year
 
-You can pass any year to gradlew command using *--args <yyyymmdd>* Eg.
-`./gradlew run 2019` will return the saddle size in the year 2019
+You can pass any year to gradlew command using *--args <yyyymmdd>* 
+Eg.
+
+`./gradlew run 2019` 
+This will return the saddle size in the year 2019
