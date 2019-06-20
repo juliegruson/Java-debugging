@@ -1,6 +1,6 @@
 # Dragon Saddle Size Checker
 
-# The bug that defeated a dragon
+## The bug that defeated a dragon
 As everyone knows Dragons are mythical creatures which do not exist
 in nature. Not naturally, that is. 
 
@@ -24,3 +24,16 @@ a lot to be desired.
 The Dragon Saddle Size Guesser has also become an unlikely party favourite!
 
 Sadly, it now has a bug.
+
+## Running this Application
+
+### Calculate the Saddle Size of a Dragon in the Current Year
+
+`./gradlew run`
+
+This will default to the current year and provide you with an appopriate estimate.
+
+### Calculate the Saddle Size of a Dragon in ANY year
+
+You can pass any year to gradlew command using *--args <yyyymmdd>* Eg.
+`./gradlew run 2019` will return the saddle size in the year 2019
