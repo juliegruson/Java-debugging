@@ -6,6 +6,10 @@ plugins {
 group 'com.openclassrooms.debugging'
 version '1.0-SNAPSHOT'
 
+repositories {
+    mavenCentral()
+}
+
 sourceCompatibility = 1.8
 
 repositories {
@@ -23,6 +27,11 @@ jar {
 
 dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:5.5.0-RC1")
+    testCompile("org.junit.jupiter:junit-jupiter-engine:5.5.0-RC1")
     testCompile("org.hamcrest:hamcrest-core:2.1")
     testCompile("org.mockito:mockito-junit-jupiter:2.23.0")
+}
+
+test {
+    useJUnitPlatform()
 }
