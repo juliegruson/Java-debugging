@@ -54,7 +54,7 @@ class DragonSaddleSizeEstimatorTest {
     @Test
     public void estimateSaddleSize_shouldFail_forYearsBeforeZero() throws Exception {
         double expectedSize = 2020.0;
-        doThrow(new InvalidSaddleSizeException("")).when(verifier).verify(new Double(0.0));
+        doThrow(new InvalidSaddleSizeException("")).when(verifier).verify(0.0);
 
         // Check that an assertion is thrown
         Assertions.assertThrows(InvalidSaddleSizeException.class, () ->{
