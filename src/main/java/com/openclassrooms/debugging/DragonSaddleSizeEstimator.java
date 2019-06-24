@@ -2,6 +2,7 @@ package com.openclassrooms.debugging;
 
 /**
  * Draggon Saddle Size Estimation based on an ancient ritual
+ * This could also serve as a great example for a course on debugging
  * @Author Kal Issy
  */
 public class DragonSaddleSizeEstimator {
@@ -12,7 +13,6 @@ public class DragonSaddleSizeEstimator {
 
     /**
      * The universal constant which is 42.
-     * This could also serve as a great example for a course on debugging
      */
     public static int UNIVERSAL_CONSTANT = 42;
 
@@ -41,7 +41,7 @@ public class DragonSaddleSizeEstimator {
     }
 
     /**
-     * Estiamtes the size of a saddle in centimeters for a given year
+     * Estimates the size of a saddle in centimeters for a given year
      * @param targetYear
      * @return Saddle size
      */
@@ -66,19 +66,23 @@ public class DragonSaddleSizeEstimator {
         // ((42-1)/41.0)
         double universalLuckyNumber = new Double(UNIVERSAL_LUCKY_NUMBER);
         double mysticalMultiplier = (copyOfUniversalConstant - yearOfBirth)/ universalLuckyNumber;
-
         // Start by setting the saddle size to the dragon's current age
         int saddleSizeFactor = 0;
-
         // Count down and how many years it's been alive
         for (int i = targetYear; i>DRAGON_SPAWN_YEAR; i--) {
             saddleSizeFactor++;
+            if (i < UNIVERSAL_CONSTANT) {
+                int modifier = enchant();
+                saddleSizeFactor += modifier;
+            }
         }
-
         // calculate the final saddle size
         double exactSaddleSize = (saddleSizeFactor * mysticalMultiplier) - mysticalMultiplier /10;
-
         return (double) Math.round(exactSaddleSize);
+    }
+
+    private int enchant() {
+        return 0; // TODO - find a subject matter expert in enchangment
     }
 
     /**

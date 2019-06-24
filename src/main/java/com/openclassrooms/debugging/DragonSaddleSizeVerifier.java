@@ -13,5 +13,4 @@ public class DragonSaddleSizeVerifier {
             throw new InvalidSaddleSizeException("Unexpected saddle size:" + saddleSize);
         }
     }
-
 }
