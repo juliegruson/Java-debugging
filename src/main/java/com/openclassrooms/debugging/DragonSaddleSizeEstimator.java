@@ -6,10 +6,6 @@ package com.openclassrooms.debugging;
  * @Author Kal Issy
  */
 public class DragonSaddleSizeEstimator {
-
-    // Singleton instance of the Dragon Size Estimator
-    public static final DragonSaddleSizeEstimator INSTANCE = new DragonSaddleSizeEstimator();
-
     /**
      * The universal constant which is 42.
      */
@@ -17,6 +13,11 @@ public class DragonSaddleSizeEstimator {
 
     // The year when dragons were first spawned on Earth in 1 AD
     public static final int DRAGON_SPAWN_YEAR = 1;
+
+
+    // Singleton instance of the Dragon Size Estimator
+    public static final DragonSaddleSizeEstimator INSTANCE = new DragonSaddleSizeEstimator();
+
 
     /**
      * This number is lucky to dragons.
