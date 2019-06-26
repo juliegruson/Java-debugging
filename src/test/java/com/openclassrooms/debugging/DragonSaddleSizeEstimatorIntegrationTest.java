@@ -12,7 +12,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 @DisplayName("Given that we have a DragonSaddleSizeEstimator")
 public class DragonSaddleSizeEstimatorIntegrationTest {
 
-    @DisplayName("When the year is 2019 Then the saddle size should be 20.18")
+    @DisplayName("When the year is 2019 Then the saddle size should be 20.18 meters")
     @Test
     public void estimateSaddleSizeInCentiMeters_shouldReturnTwentyPointEighteen_whenCalculatingTheSizeIn2019() throws Exception {
         int targetYear = 2019;
@@ -23,6 +23,6 @@ public class DragonSaddleSizeEstimatorIntegrationTest {
         Double expectedSaddleSize = DragonSaddleSizeEstimator.INSTANCE.estimateSaddleSizeInCentiMeters(targetYear);
 
         // Assert
-        assertThat(expectedSaddleSize, is(equalTo(20.18)));
+        assertThat(expectedSaddleSize, is(equalTo(2018.0)));
     }
 }
