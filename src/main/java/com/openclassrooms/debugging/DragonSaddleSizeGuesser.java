@@ -25,8 +25,6 @@ public class DragonSaddleSizeGuesser {
         // Take the year from the command line arguments
         if (args.length != 0) {
             targetYear = Integer.parseInt(args[0]);
-            estimator.setCopyOfUniversalConstant(42); // The universal constant
-            estimator.setYearOfBirth(1); // All dragon's were spawned in 1 AD
         }
 
         System.out.println("Calculating saddle size for a dragon in the year " + targetYear);
