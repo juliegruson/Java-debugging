@@ -1,11 +1,14 @@
 package com.openclassrooms.debugging;
 
 import com.openclassrooms.debugging.exception.InvalidSaddleSizeException;
+import com.openclassrooms.debugging.service.DragonSaddleSizeEstimator;
+import com.openclassrooms.debugging.service.DragonSaddleSizeVerifier;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -16,22 +19,14 @@ import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 
 @DisplayName("Given we have a saddle size estimatorUnderTest spell")
-@ExtendWith(MockitoExtension.class)
+@ExtendWith({MockitoExtension.class})
 class DragonSaddleSizeEstimatorTest {
 
     @Mock
     DragonSaddleSizeVerifier verifier;
 
-    DragonSaddleSizeEstimator estimatorUnderTest;
-
-    @BeforeEach
-    public void setUp() {
-        estimatorUnderTest = new DragonSaddleSizeEstimator();
-        estimatorUnderTest.setYearOfBirth(1); // Dragon's should be born in 1 AD
-        estimatorUnderTest.setCopyOfUniversalConstant(42); // 42 is the universal constant
-        estimatorUnderTest.setVerifier(verifier);
-
-    }
+    @InjectMocks
+    DragonSaddleSizeEstimator estimatorUnderTest = new DragonSaddleSizeEstimator();
 
     @DisplayName("When estimating for a saddle size in the year 2 AD then the size is 2 centimeter")
     @Test
