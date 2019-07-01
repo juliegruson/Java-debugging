@@ -20,10 +20,8 @@ public class DragonSaddleSizeEstimator {
     // The year when dragons were first spawned on Earth in 1 AD
     public static final int DRAGON_SPAWN_YEAR = 1;
 
-
     // Singleton instance of the Dragon Size Estimator
     public static final DragonSaddleSizeEstimator INSTANCE = new DragonSaddleSizeEstimator();
-
 
     /**
      * This number is lucky to dragons.
@@ -53,28 +51,10 @@ public class DragonSaddleSizeEstimator {
     public Double estimateSaddleSizeInCentiMeters(int targetYear) throws Exception {
         double roundedSaddleSize = calculateSaddleSizeFromYear(targetYear);
 
-        // RITUAL METHOD
-        // FIXME: Remove this doesn't help calculate a saddle side
-        enterAProgrammaticTrance();
-
         // Verify that we have a valid saddle size
         verifier.verify(roundedSaddleSize);
 
         return roundedSaddleSize;
-    }
-
-    private void enterAProgrammaticTrance() throws InterruptedException {
-        // Slows down the magic
-        Instant before = Instant.now();
-        Instant end = before.plus(Duration.ofSeconds(10));
-
-        while (Instant.now().isBefore(end)) {
-            for (int j = 0; j < Integer.MAX_VALUE; j++) {
-                for (int i = 0; i < Integer.MAX_VALUE; i++) {
-                    // TODO - implement
-                }
-            }
-        }
     }
 
     private double calculateSaddleSizeFromYear(int targetYear) {
