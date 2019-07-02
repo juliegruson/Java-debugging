@@ -24,6 +24,7 @@ jar {
 }
 
 dependencies {
+    implementation("org.springframework.boot:spring-boot-starter-actuator:2.1.6.RELEASE")
     implementation("org.springframework.boot:spring-boot-dependencies:2.1.6.RELEASE")
     implementation("org.springframework.boot:spring-boot-starter-web:2.1.6.RELEASE")
     testCompile("org.junit.jupiter:junit-jupiter-api:5.5.0-RC1")
