@@ -46,7 +46,7 @@ public class DragonSaddleSizeController {
     private Double handleSaddleSizeRequest(Integer targetYear) throws Exception {
         Double saddleSizeEstimate = dragonSaddleSizeEstimator.estimateSaddleSizeInCentiMeters(targetYear);
         String response = saddleSizeReporter.report(targetYear, saddleSizeEstimate);
-        logger.info("Calculated a saddle size", response);
+        logger.info("Calculated a saddle size:" + response);
         return saddleSizeEstimate;
     }
 
