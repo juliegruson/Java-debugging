@@ -1,5 +1,11 @@
 # Dragon Saddle Size Checker
 
+# This Branch
+
+This branch contains a version of the application which has been converted into a SpringBoot service.
+
+
+
 # The bug that defeated a dragon
 As everyone knows Dragons are mythical creatures which do not exist
 in nature. Not naturally, that is. 
@@ -29,16 +35,11 @@ Sadly, it now has a bug.
 
 ### Calculate the Saddle Size of a Dragon in the Current Year
 
-`./gradlew run`
+`./gradlew bootRun`
 
-This will default to the current year and provide you with an appopriate estimate.
+This will start the web application.
 
-### Calculate the Saddle Size of a Dragon in ANY year
-
-You can pass any year to gradlew command using *--args <yyyymmdd>* 
-Eg.
-
-`./gradlew run --args 2019` 
+* Visit http://localhost:9999/dragon/size to see an estimate for the current year
+* Visit http://localhost:9999/dragon/size/year/2019 to see an estimate for 2019. Replace the year as appropriate.
 
 
-This will return the saddle size in the year 2019
