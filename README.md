@@ -31,7 +31,7 @@ Sadly, it now has a bug.
 
 `./gradlew run`
 
-This will default to the current year and provide you with an appopriate estimate.
+This will default to the current year and provide you with an appropriate estimate.
 
 ### Calculate the Saddle Size of a Dragon in ANY year
 
