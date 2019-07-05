@@ -1,5 +1,6 @@
 package com.openclassrooms.debugging.controller;
 
+import com.openclassrooms.debugging.exception.InvalidSaddleSizeException;
 import com.openclassrooms.debugging.service.DragonSaddleSizeEstimator;
 import com.openclassrooms.debugging.service.SaddleSizeReporter;
 import org.slf4j.Logger;
@@ -44,7 +45,13 @@ public class DragonSaddleSizeController {
     }
 
     private Double handleSaddleSizeRequest(Integer targetYear) throws Exception {
-        Double saddleSizeEstimate = dragonSaddleSizeEstimator.estimateSaddleSizeInCentiMeters(targetYear);
+        Double saddleSizeEstimate;
+        try {
+            saddleSizeEstimate = dragonSaddleSizeEstimator.estimateSaddleSizeInCentiMeters(targetYear);
+        } catch (InvalidSaddleSizeException e) {
+            logger.error("Failed to calculate saddle size:", e);
+            throw e;
+        }
         String response = saddleSizeReporter.report(targetYear, saddleSizeEstimate);
         logger.info("Calculated a saddle size:" + response);
         return saddleSizeEstimate;
