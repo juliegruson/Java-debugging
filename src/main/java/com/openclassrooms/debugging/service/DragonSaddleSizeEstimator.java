@@ -41,7 +41,7 @@ public class DragonSaddleSizeEstimator {
 
     private double calculateSaddleSizeFromYear(int targetYear) {
         logger.trace("About to calculate saddle size using MYSTICAL CONSTANT: {} and Target Year: {}", MYSTICAL_CONSTANT, targetYear);
-        // Count down and how many years it's been alive
+        // Count down the number of years it's been alive
         double saddleSizeInCm = targetYear-MYSTICAL_CONSTANT;
 
         // This is from an era before dragon's were spawned
