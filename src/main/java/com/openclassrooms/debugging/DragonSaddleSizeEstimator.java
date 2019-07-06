@@ -83,7 +83,7 @@ public class DragonSaddleSizeEstimator {
         double mysticalMultiplier = (copyOfUniversalConstant - yearOfBirth)/ universalLuckyNumber;
         // Start by setting the saddle size to the dragon's current age
         int saddleSizeFactor = 0;
-        // Count down and how many years it's been alive
+        // Count down the number of years it's been alive
         for (int i = targetYear; i>DRAGON_SPAWN_YEAR; i--) {
             saddleSizeFactor++;
         }
