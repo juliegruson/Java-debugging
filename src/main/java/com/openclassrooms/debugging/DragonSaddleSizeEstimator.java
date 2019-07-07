@@ -7,7 +7,7 @@ import java.time.temporal.TemporalAdjuster;
 import java.time.temporal.TemporalAmount;
 
 /**
- * Draggon Saddle Size Estimation based on an ancient ritual
+ * Dragon Saddle Size Estimation based on an ancient ritual
  * This could also serve as a great example for a course on debugging
  * @Author Kal Issy
  */
