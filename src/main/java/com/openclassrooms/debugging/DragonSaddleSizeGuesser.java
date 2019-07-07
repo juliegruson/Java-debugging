@@ -17,9 +17,6 @@ public class DragonSaddleSizeGuesser {
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
         }
 
-        // Estimate the saddle size of a dragon,
-        // relative to the year "One" when all extent dragons were born.
-
         int targetYear = Calendar.getInstance().get(Calendar.YEAR);
 
         // Take the year from the command line arguments
@@ -29,7 +26,8 @@ public class DragonSaddleSizeGuesser {
 
         System.out.println("Calculating saddle size for a dragon in the year " + targetYear);
 
-        // Calculate Saddle Size
+        // Estimate the saddle size of a dragon,
+        // relative to the year "One" when all extent dragons were born.
         double saddleSize = DragonSaddleSizeEstimator.INSTANCE.estimateSaddleSizeInCentiMeters(targetYear);
 
         // Report
