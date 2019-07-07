@@ -27,8 +27,6 @@ class DragonSaddleSizeEstimatorTest {
     @BeforeEach
     public void setUp() {
         estimatorUnderTest = new DragonSaddleSizeEstimator();
-        estimatorUnderTest.setYearOfBirth(1); // Dragon's should be born in 1 AD
-        estimatorUnderTest.setCopyOfUniversalConstant(42); // 42 is the universal constant
         estimatorUnderTest.setVerifier(verifier);
 
     }
