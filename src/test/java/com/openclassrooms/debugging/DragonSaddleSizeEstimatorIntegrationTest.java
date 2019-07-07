@@ -14,7 +14,7 @@ public class DragonSaddleSizeEstimatorIntegrationTest {
 
     @DisplayName("When the year is 2019 Then the saddle size should be 20.18 meters")
     @Test
-    public void estimateSaddleSizeInCentiMeters_shouldReturnTwentyPointEighteen_whenCalculatingTheSizeIn2019() throws Exception {
+    public void estimateSaddleSizeInCentiMeters_shouldReturnTwentyPointEighteenMeters_whenCalculatingTheSizeIn2019() throws Exception {
         int targetYear = 2019;
         // ARRANGE
         DragonSaddleSizeEstimator estimator = DragonSaddleSizeEstimator.INSTANCE;
