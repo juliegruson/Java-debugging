@@ -19,6 +19,7 @@ repositories {
 application {
     mainClassName = 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'
 }
+
 jar {
     manifest {
         attributes 'Main-Class': 'com.openclassrooms.debugging.DragonSaddleSizeGuesser'

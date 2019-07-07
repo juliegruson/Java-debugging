@@ -12,10 +12,9 @@ import java.util.Calendar;
 public class DragonSaddleSizeGuesser {
 
     public static void main(String[] args) throws Exception {
-        DragonSaddleSizeEstimator estimator = DragonSaddleSizeEstimator.INSTANCE;
-        // Loop needlessly to replicate and ancient ritual
-        for (int i = 0; i < Integer.MAX_VALUE; i++) {
-        }
+
+        DragonSaddleSizeEstimator estimator = new DragonSaddleSizeEstimator();
+        SaddleSizeReporter saddleSizeReporter = new SaddleSizeReporter();
 
         // Estimate the saddle size of a dragon,
         // relative to the year "One" when all extent dragons were born.
@@ -26,13 +25,22 @@ public class DragonSaddleSizeGuesser {
             targetYear = Integer.parseInt(args[0]);
         }
 
-        System.out.println("Calculating saddle size for a dragon in the year " + targetYear);
+        informUser("Calculating saddle size for a dragon in the year " + targetYear);
 
         // Calculate Saddle Size
-        double saddleSize = DragonSaddleSizeEstimator.INSTANCE.estimateSaddleSizeInCentiMeters(targetYear);
+        double saddleSize = estimator.estimateSaddleSizeInCentiMeters(targetYear);
+
+        // Convert to Meters
+        double saddleSizeInMeters = MetricConverter.INSTANCE.convertCmToMeters(saddleSize);
 
         // Report
-        new SaddleSizeReporter(targetYear, saddleSize).report();
+        String report = saddleSizeReporter.report(targetYear, saddleSizeInMeters);
+        informUser(report);
     }
+
+    private static void informUser(String report) {
+        System.out.println(report);
+    }
+
 
 }

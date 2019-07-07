@@ -12,29 +12,21 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 @DisplayName("Given that a dragon's saddle size has been estimated")
 class SaddleSizeReporterTest {
-    private ByteArrayOutputStream byteArrayOutputStream;
-
-    @BeforeEach
-    public void setUp() {
-        byteArrayOutputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(byteArrayOutputStream));
-    }
+    SaddleSizeReporter classUnderTest = new SaddleSizeReporter();
 
     @DisplayName("When reported on it, then it should clearly communicate the size")
     @Test
     void report() {
         // Arrange
         int targetYear = 2019;
-        int saddleSize = 2018;
-        SaddleSizeReporter classUnderTest = new SaddleSizeReporter(targetYear, saddleSize);
+        double saddleSize = 20.18;
 
         // Act
-        classUnderTest.report();
+        String actualReport = classUnderTest.report(targetYear, saddleSize);
 
         // Assert
-        String actualReport = byteArrayOutputStream.toString();
         assertThat( actualReport,
                 startsWith("In the year 2019, dragons born in the year 1 AD " +
-                        "will have a saddle size of 20.18 meters(2018.0 centimeters"));
+                        "will have a saddle size of 20.18 meters"));
     }
 }
