@@ -1,16 +1,11 @@
 package com.openclassrooms.debugging;
 
 import com.openclassrooms.debugging.service.SaddleSizeReporter;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import static org.hamcrest.CoreMatchers.startsWith;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
 
 @DisplayName("Given that a dragon's saddle size has been estimated")
 class SaddleSizeReporterTest {
