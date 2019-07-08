@@ -18,7 +18,7 @@ You find the following email in your inbox and immediately put on your Sherlock 
 > Sadly, it's not working! 
 >
 > You'll find the code on the *activity* branch.
-> Try it our for yourself by checking it out and running the `gradlew run` task.
+> Try it out for yourself by checking it out and running the `gradlew run` task.
 >
 > This produces output like:
 >> In the year 2019, dragons born in the year 1 AD will have a saddle size of 0.32757564452389476 meters
@@ -49,7 +49,7 @@ You find the following email in your inbox and immediately put on your Sherlock 
 1. Investigate the cause of failure by stepping through the code in the debugger.
 1. Collect evidence from the debugger, using screenshots of:
     * The variables pane when you find the variables causing the issue. 
-    * The call stack (in the Frames pane) when you find key parts of the code where the issue occurs
+    * The call stack (in the Frames pane) when you find key parts of the code where the issue occurs.
     * The Breakpoints which you found most helpful.
 1. Formulate a theory and apply a fix.
 1. If your tests pass, enjoy the praise of Dragon Riders everywhere.
@@ -62,8 +62,8 @@ new *LEARNINGS.md* markdown file.
 1. `git add SOLUTION.md && git commit -m 'Added solution'`
 1. Ensure you have committed your solution on the activity-solution branch
 1. Provide us with:
-   1. Either a zip or a git repository they can clone to see your branch and run all the `fixed` program
-   1. Key screenshots of the debugger during moments of your investigation which you found valuable
+   1. Either a zip or a git repository they can clone to see your branch and run all the `fixed` program.
+   1. Key screenshots of the debugger during moments of your investigation which you found valuable.
 1. This code is written by Warlocks, so when you do get shocked by code which needs changing add a *FIXME* comment.
 
 
@@ -74,7 +74,7 @@ class to convert a saddle size in centimeters to meters.
 the test creates a MetricConverter by using the no arguments constructor. DragonSaddleSizeGuesser, which is currently
 failing, uses the singleton returned by calling `MetricConverter.INSTANCE`.
 * There was *supposed to be* logic in the metric converter to return an alternative magical estimate in the event of a 
-DragonApocalypse. There seem to be comments and a conditional statement referrering to this.
+DragonApocalypse. There seem to be comments and a conditional statement referring to this.
 
 ## Evaluation Guidelines
 To validate the skill of *finding and fixing a bug using the debugger* the submitted solution should be checked for 
@@ -88,7 +88,7 @@ the following criteria (all criteria must be validated in order to acquire the s
      * Any code changes made should also be visible in the commit history. There may be multiple commits if different
      theories were tested.
 * Running gradle with the *test* task (`./gradlew test`) should result in tests passing.
-* Running gradle with the *run* task (`./gradlew run`) will produce an correct estimate:
+* Running gradle with the *run* task (`./gradlew run`) will produce a correct estimate:
   * For instance, running `./gradlew run` or `gradlew.sh run` in 2019, results in: 
     > In the year 2019, dragons born in the year 1 AD will have a saddle size of 20.18 meters
   * The output should contain the current year(eg. 2019, 2020, 2021 etc.) and a saddle size set to the the 
@@ -100,7 +100,7 @@ the bug and theories tested. This should be no longer than 800 words and can ide
       * The static variable MetricConverter.NOT_A_DRAGON_APOCALYPSE and a related field is key to this. Screenshots
       should  be used to demonstrate identifying whether they are set as expected.
      * The call stack leading to areas which were considered relevant to solving the bug.
-     * Breakpoints which were helpful
+     * Breakpoints which were helpful.
 
 # Evaluation of the Skill
 This skill will be validated by providing evidence of debugging a Java bug using a scientific method, a failing test and 
