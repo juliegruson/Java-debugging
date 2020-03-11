@@ -1,44 +1,35 @@
-# Dragon Saddle Size Checker
+Calculateur de taille de selle de dragon
 
-# The bug that defeated a dragon
-As everyone knows Dragons are mythical creatures which do not exist
-in nature. Not naturally, that is. 
+# Le bug qui a vaincu un dragon
+Comme chacun sait, les dragons sont des créatures mythiques qui n'existent pas dans la nature. Pas naturellement, en fait. 
 
-It is a little known fact that in the year 1 AD, the wise
-alchemist Lou Tan Dey-ta created a small batch
-of dragons using unnatural means and a number of fizzy potions.
-Those dragons still fly the skies today.
+Ce que vous ne savez peut-être pas, c'est qu'en l'an 1 de notre ère, le sage alchimiste Lou Tan Dey-ta a réussi à créer plusieurs dragons en utilisant des moyens non naturels et un certain nombre de potions pétillantes.
+Ces dragons volent encore dans le ciel aujourd'hui.
 
-Dragons are extremely long lived and grow at a constant, but slow rate. 
-Buying the right dragon saddle is a tricky business.
+Les dragons vivent extrêmement longtemps et grandissent à un rythme constant, mais lent. 
+Acheter la bonne selle de dragon est une affaire délicate.
 
-In order to help those lucky enough to one day ride on these dragons
-Lou Tan published an algorithm for calculating the size of a saddle based
-on the age of a Dragon. 
+Afin d'aider ceux qui ont la chance de monter un jour sur ces dragons,
+Lou Tan a publié un algorithme de calcul de la taille d'une selle basé
+sur l'âge d'un dragon. 
 
-Centuries later this algorithm was hurriedly re-written in Java in
-order to help those fortunate enough to require dragon saddles. The code leaves
-a lot to be desired.
+Des siècles plus tard, cet algorithme a été réécrit à la hâte en Java afin d'aider ceux qui ont la chance d'avoir besoin de selles de dragon. 
 
+Malheureusement, le code laisse beaucoup à désirer : il y a maintenant un bug.
 
-The Dragon Saddle Size Guesser has also become an unlikely party favourite!
+# Exécution de cette application
 
-Sadly, it now has a bug.
+### Calculer la taille de la selle d'un dragon pour l'année en cours
 
-# Running this Application
+"./gradlew run
 
-### Calculate the Saddle Size of a Dragon in the Current Year
+Cela vous donnera une estimation appropriée pour l’année en cours (par défaut).
 
-`./gradlew run`
+### Calculer la taille de la selle d'un dragon pour N'IMPORTE QUELLE année
 
-This will default to the current year and provide you with an appropriate estimate.
+Vous pouvez effectuer votre calcul pour n'importe quelle année en utilisant *--args <yyyymmdd>* 
+Par exemple
 
-### Calculate the Saddle Size of a Dragon in ANY year
+Gradlew Run --args 2019 
 
-You can pass any year to gradlew command using *--args <yyyymmdd>* 
-Eg.
-
-`./gradlew run --args 2019` 
-
-
-This will return the saddle size in the year 2019
+Ainsi, vous calculerez la taille de la selle d’un dragon pour l’année 2019. 
